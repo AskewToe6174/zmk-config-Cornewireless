@@ -1,84 +1,39 @@
 # Keymap — Corne wireless
 
-Mapa visual de las teclas y capas configuradas en este repo. Para detalles del código fuente ver [config/corne.keymap](config/corne.keymap).
+Mapa visual de las teclas y capas configuradas en este repo. Para el código fuente ver [config/corne.keymap](config/corne.keymap).
+
+## Vista general (las 3 capas)
+
+![Keymap visual](images/keymap.svg)
+
+Generado con [keymap-drawer](https://github.com/caksoylar/keymap-drawer). Las teclas en rojo claro de la fila del pulgar son los activadores de capa (`lower`, `raise`).
 
 ## Cómo se activan las capas
 
-El Corne tiene 3 capas. La que está activa depende de qué tecla del **pulgar** mantengas pulsada:
-
 | Capa | Cómo activarla | Para qué sirve |
 |---|---|---|
-| `default` (capa 0) | Sin nada pulsado | Escribir normal (letras, espacio, enter) |
-| `lower` (capa 1) | Mantén pulsada la tecla pulgar **izquierda** central (`LWR`) | Números, flechas, Bluetooth, volumen, multimedia |
-| `raise` (capa 2) | Mantén pulsada la tecla pulgar **derecha** central (`RSE`) | Símbolos `! @ # $ % & * ( ) [ ] { } < > | \` |
+| `default` | Sin nada pulsado | Escribir normal (letras, espacio, enter) |
+| `lower` | Mantén pulsada la tecla pulgar **izquierda** central | Números, flechas, Bluetooth, volumen, multimedia |
+| `raise` | Mantén pulsada la tecla pulgar **derecha** central | Símbolos `! @ # $ % & * ( ) [ ] { } | \` |
 
-Las capas son momentáneas: en cuanto sueltas `LWR` o `RSE`, vuelves al default.
+Las capas son momentáneas: en cuanto sueltas la tecla, vuelves al default.
 
-## Esquema de la fila inferior (pulgares)
+## Capa `lower` — referencia rápida
 
-Las 6 teclas del pulgar — 3 en cada mitad:
-
-```
-       [ GUI ] [ LWR ] [ SPC ]    [ ENT ] [ RSE ] [ ALT ]
-        (cmd)  (capa 1) (espacio)  (intro) (capa 2) (alt)
-       └─── mitad izquierda ───┘  └─── mitad derecha ───┘
-```
-
-- **GUI** = tecla Cmd de Mac.
-- **LWR** y **RSE** = activadores de capa (mantener pulsado).
-- **SPC** y **ENT** = espacio y enter normales.
-- **ALT** = tecla Option de Mac.
-
-## Capa default (capa 0)
-
-```
-┌──────┬────┬────┬────┬────┬────┐    ┌────┬────┬────┬────┬────┬──────┐
-│ TAB  │ Q  │ W  │ E  │ R  │ T  │    │ Y  │ U  │ I  │ O  │ P  │ BSPC │
-├──────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼──────┤
-│ CTRL │ A  │ S  │ D  │ F  │ G  │    │ H  │ J  │ K  │ L  │ ;  │  '   │
-├──────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼──────┤
-│ SHFT │ Z  │ X  │ C  │ V  │ B  │    │ N  │ M  │ ,  │ .  │ /  │ ESC  │
-└──────┴────┴────┴────┼────┼────┤    ├────┼────┼────┴────┴────┴──────┘
-                      │GUI │LWR │    │ENT │RSE │
-                      └────┼────┤    ├────┼────┘
-                           │SPC │    │ALT │
-                           └────┘    └────┘
-```
-
-QWERTY estándar. Sin sorpresas.
-
-## Capa lower (capa 1) — mantén `LWR`
-
-Números, flechas, Bluetooth, volumen y multimedia.
-
-```
-┌──────┬────┬────┬────┬────┬────┐    ┌──────┬──────┬──────┬──────┬──────┬──────┐
-│ TAB  │ 1  │ 2  │ 3  │ 4  │ 5  │    │  6   │  7   │  8   │  9   │  0   │ BSPC │
-├──────┼────┼────┼────┼────┼────┤    ├──────┼──────┼──────┼──────┼──────┼──────┤
-│BTCLR │BT1 │BT2 │BT3 │BT4 │BT5 │    │ LEFT │ DOWN │  UP  │ RIGHT│ VOL- │ VOL+ │
-├──────┼────┼────┼────┼────┼────┤    ├──────┼──────┼──────┼──────┼──────┼──────┤
-│ SHFT │    │    │    │    │    │    │ PREV │ PLAY │ NEXT │ MUTE │      │      │
-└──────┴────┴────┴────┼────┼────┤    ├──────┼──────┴──────┴──────┴──────┴──────┘
-                      │GUI │    │    │ ENT  │
-                      └────┼────┤    ├──────┼─────┐
-                           │SPC │    │ ALT  │     │
-                           └────┘    └──────┴─────┘
-```
-
-### Bluetooth (mitad izquierda fila central)
+### Bluetooth (mitad izquierda)
 
 | Tecla | Acción |
 |---|---|
-| `LWR` + `Q` (BTCLR) | **Borra** el perfil BT actual (úsalo si el Mac no quiere emparejar) |
-| `LWR` + `A` (BT1) | Cambia al perfil BT **0** |
-| `LWR` + `S` (BT2) | Cambia al perfil BT **1** |
-| `LWR` + `D` (BT3) | Cambia al perfil BT **2** |
-| `LWR` + `F` (BT4) | Cambia al perfil BT **3** |
-| `LWR` + `G` (BT5) | Cambia al perfil BT **4** |
+| `LWR` + `Q` (BT CLR) | **Borra** el perfil BT actual (úsalo si el Mac no quiere emparejar) |
+| `LWR` + `A` (BT 0) | Cambia al perfil BT **0** |
+| `LWR` + `S` (BT 1) | Cambia al perfil BT **1** |
+| `LWR` + `D` (BT 2) | Cambia al perfil BT **2** |
+| `LWR` + `F` (BT 3) | Cambia al perfil BT **3** |
+| `LWR` + `G` (BT 4) | Cambia al perfil BT **4** |
 
 Permite emparejar hasta 5 dispositivos distintos y cambiar entre ellos.
 
-### Flechas (mitad derecha fila central)
+### Flechas y volumen (mitad derecha, fila central)
 
 | Tecla | Acción |
 |---|---|
@@ -86,42 +41,27 @@ Permite emparejar hasta 5 dispositivos distintos y cambiar entre ellos.
 | `LWR` + `J` | ↓ |
 | `LWR` + `K` | ↑ |
 | `LWR` + `L` | → |
+| `LWR` + `;` | **Bajar volumen** |
+| `LWR` + `'` | **Subir volumen** |
 
-### Volumen y multimedia (añadido, mitad derecha)
+### Multimedia (mitad derecha, fila inferior)
 
 | Tecla | Acción |
 |---|---|
-| `LWR` + `;` | **Bajar volumen** |
-| `LWR` + `'` | **Subir volumen** |
 | `LWR` + `N` | Pista anterior |
 | `LWR` + `M` | Play / Pause |
 | `LWR` + `,` | Pista siguiente |
 | `LWR` + `.` | Mute |
 
-## Capa raise (capa 2) — mantén `RSE`
+## Capa `raise` — referencia rápida
 
-Símbolos. Los superiores son shift+número, los inferiores son los símbolos típicos de programación.
+Símbolos. Fila superior = shift+número, filas inferiores = símbolos de programación.
 
-```
-┌──────┬────┬────┬────┬────┬────┐    ┌────┬────┬────┬────┬────┬──────┐
-│ TAB  │ !  │ @  │ #  │ $  │ %  │    │ ^  │ &  │ *  │ (  │ )  │ BSPC │
-├──────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼──────┤
-│ CTRL │    │    │    │    │    │    │ -  │ =  │ [  │ ]  │ \  │  `   │
-├──────┼────┼────┼────┼────┼────┤    ├────┼────┼────┼────┼────┼──────┤
-│ SHFT │    │    │    │    │    │    │ _  │ +  │ {  │ }  │ |  │  ~   │
-└──────┴────┴────┴────┼────┼────┤    ├────┼────┼────┴────┴────┴──────┘
-                      │GUI │    │    │ENT │    │
-                      └────┼────┤    ├────┼────┘
-                           │SPC │    │ALT │
-                           └────┘    └────┘
-```
-
-## Cosas que NO están en el keymap (limitaciones conocidas)
-
-- **No hay tap-dance, ni home row mods, ni combos.** El keymap es directo, una tecla = una acción.
-- **No hay capa para emojis** ni layout extra (US es lo único).
-- **Caps Lock** no está mapeado — para mayúsculas continuas hay que mantener Shift, o añadirlo en alguna capa si lo necesitas.
-- **F1-F12** tampoco están — si las necesitas, hay sitio libre en `raise_layer` para añadirlas.
+| Fila | Mitad izquierda | Mitad derecha |
+|---|---|---|
+| Superior | `! @ # $ %` (sobre Q W E R T) | `^ & * ( )` (sobre Y U I O P) |
+| Central | (sin cambios) | `- = [ ] \` y backtick |
+| Inferior | (sin cambios) | `_ + { } |` y tilde |
 
 ## OLED — qué muestra cada pantalla
 
@@ -132,11 +72,25 @@ Símbolos. Los superiores son shift+número, los inferiores son los símbolos t�
 
 Más detalle del módulo OLED en [mctechnology17/zmk-nice-oled](https://github.com/mctechnology17/zmk-nice-oled).
 
+## Cosas que NO están en el keymap (limitaciones conocidas)
+
+- **No hay tap-dance, ni home row mods, ni combos.** El keymap es directo, una tecla = una acción.
+- **No hay capa para emojis** ni layout extra (US es lo único).
+- **Caps Lock** no está mapeado — para mayúsculas continuas hay que mantener Shift, o añadirlo en alguna capa si lo necesitas.
+- **F1-F12** tampoco están — si las necesitas, hay sitio libre en `raise_layer` para añadirlas.
+
 ## Cómo cambiar el keymap
 
 1. Edita [config/corne.keymap](config/corne.keymap).
 2. Commit + push.
 3. GitHub Actions compila los `.uf2` en ~3 min (mira en la pestaña Actions).
 4. Descarga el zip de artifacts y flashea ambas mitades.
+
+Para regenerar la imagen del keymap tras un cambio:
+
+```bash
+pip install keymap-drawer
+keymap parse -z config/corne.keymap | keymap draw - > images/keymap.svg
+```
 
 Referencia de códigos ZMK válidos para `&kp`: https://zmk.dev/docs/keymaps/list-of-keycodes
